@@ -1,0 +1,3 @@
+#historia tashkent config localhost
+port: "8000"
+handles: ["MrPark", "InKefirITrust", "V..", "AD12"]

@@ -1,0 +1,19 @@
+html {
+	height: 100%;
+}
+
+body {
+	height: 100%;
+}
+
+.level {
+	margin-top: 50px;
+}
+
+.level .heading img {
+	height: 150px;
+}
+
+.level .title a {
+	font-size: 0.8em;
+}
