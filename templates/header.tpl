@@ -3,6 +3,9 @@
 <head>
 	<title>MSU Tashkent Branch rating</title>
 
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 	<link href="/static/css/bulma.css" type="text/css" rel="stylesheet" />
 	<link href="/static/css/font-awesome.min.css" type="text/css" rel="stylesheet" />
 	<link href="/static/css/index.css" type="text/css" rel="stylesheet" />
