@@ -8,6 +8,7 @@ import (
 	"time"
 	"io/ioutil"
 	"text/template"
+	"sort"
 )
 
 type Member struct {
@@ -49,6 +50,12 @@ type SubmissionsTemplateData struct {
 	Stats []SubmissionStats
 	StatsLatestIndex int64
 }
+
+type BySuccessCount []SubmissionStats
+
+func (a BySuccessCount) Len() int           { return len(a) }
+func (a BySuccessCount) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
+func (a BySuccessCount) Less(i, j int) bool { return a[i].SuccessCount > a[j].SuccessCount }
 
 func (sr *SubmissionsResponse) Get(handle string) {
 	var i int
@@ -105,6 +112,8 @@ func submissionsPage(w http.ResponseWriter, r *http.Request) {
 		sss[i].SuccessCount = c
 
 	}
+
+	sort.Sort(BySuccessCount(sss))
 
 	var data SubmissionsTemplateData
 
